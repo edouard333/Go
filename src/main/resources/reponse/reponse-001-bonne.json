@@ -1,0 +1,20 @@
+{
+    "entete" : 
+    {
+        "titre" : "Bonne réponse",
+        "texte" : "Noir peut capturer une pierre en jouant sur la dernière liberté avec 1."
+    },
+    "reponse" :
+    {
+        "initial" : [],
+        "ajout" :
+        [
+            {
+                "pierre" : "n",
+                "x" :"7",
+                "y" : "8",
+                "texte" : "1"
+            }
+        ]
+    }
+}

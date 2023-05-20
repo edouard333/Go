@@ -1,0 +1,26 @@
+{
+    "entete" : 
+    {
+        "titre" : "Mauvaise réponse",
+        "texte" : "Si Noir joue un autre mouvement que 1, Blanc peut s'échapper avec un extension en 2."
+    },
+    "reponse" :
+    {
+        "initial" : [],
+        "ajout" :
+        [
+            {
+                "pierre" : "n",
+                "x" :"9",
+                "y" : "7",
+                "texte" : "1"
+            },
+            {
+                "pierre" : "b",
+                "x" :"7",
+                "y" : "8",
+                "texte" : "2"
+            }
+        ]
+    }
+}
