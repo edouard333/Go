@@ -4,11 +4,62 @@
     <groupId>com.phenix</groupId>
     <artifactId>go</artifactId>
     <name>Go</name>
-    <version>1.0.0</version>
+    <version>0.2.0</version>
     <packaging>jar</packaging>
+    <url>https://github.com/edouard333/Go</url>
+    
+    <developers>
+        <developer>
+            <name>Edouard Jeanjean</name>
+            <email>edouard128@hotmail.com</email>
+        </developer>
+    </developers>
+    
+    <build>
+        <!-- Nom du JAR par défaut. -->
+        <finalName>${project.name}-${project.version}</finalName>
+        
+        <plugins>
+            <!-- Permet d'ajouter les JAR externe au JAR créé. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.7.1</version>
+                <executions>
+                    <execution>
+                        <id>jar-with-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>${project.groupId}.${project.artifactId}.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
+            </plugin>
+        
+            <!-- N'ajoute pas le projet dans le repository Maven en local. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
@@ -20,6 +71,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.phenix.go.Main</exec.mainClass>
+        <exec.mainClass>${project.groupId}.${project.artifactId}.Main</exec.mainClass>
     </properties>
 </project>

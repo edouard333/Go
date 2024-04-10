@@ -1,4 +1,4 @@
-package com.phenix.go;
+package com.phenix.go.other;
 
 /**
  *

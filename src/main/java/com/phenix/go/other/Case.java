@@ -1,4 +1,4 @@
-package com.phenix.go;
+package com.phenix.go.other;
 
 /**
  *
@@ -6,9 +6,12 @@ package com.phenix.go;
  */
 public class Case {
 
-    String type;
+    public String type;
 
-    int groupe = 0; // 0 = pas dans un groupe.
+    /**
+     * 0 = pas dans un groupe.
+     */
+    public int groupe = 0;
 
     public Case(String type) {
         this.type = type;
