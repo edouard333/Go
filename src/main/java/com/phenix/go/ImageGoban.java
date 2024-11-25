@@ -10,11 +10,11 @@ import javax.imageio.ImageIO;
 import org.json.simple.JSONArray;
 
 /**
- * Créé l'image de goban.
+ * Crée l'image de goban.
  *
  * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
-public class ImageGoban {
+public final class ImageGoban {
 
     /**
      * Résolution des pierre et donc de l'image.
@@ -56,7 +56,9 @@ public class ImageGoban {
      */
     private final int height;
 
-    /* Taille des boules de référence sur le Goban.*/
+    /**
+     * Taille des boules de référence sur le Goban.
+     */
     private final int taille_reference = 8;
 
     /**
@@ -203,7 +205,7 @@ public class ImageGoban {
         // Disposes of this graphics context and releases any system resources that it is using. 
         this.g2d.dispose();
 
-        // Créé le dossier où se trouve le résultat.
+        // Crée le dossier où se trouve le résultat.
         File sous_dossier = new File(this.dossier + "Images/png/");
         sous_dossier.mkdirs();
 

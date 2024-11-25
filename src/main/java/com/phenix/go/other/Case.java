@@ -2,17 +2,24 @@ package com.phenix.go.other;
 
 /**
  *
- * @author Edouard Jeanjean<edouard128@hotmail.com>
+ * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
 public class Case {
 
+    /**
+     *
+     */
     public String type;
 
     /**
-     * 0 = pas dans un groupe.
+     * <em>0</em> = pas dans un groupe.
      */
     public int groupe = 0;
 
+    /**
+     *
+     * @param type
+     */
     public Case(String type) {
         this.type = type;
     }

@@ -1,15 +1,23 @@
 package com.phenix.go.other;
 
 /**
+ * Lance le programme.
  *
- * @author Edouard Jeanjean<edouard128@hotmail.com>
+ * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
 public class Main {
 
-    static int numero_groupe = 0;
+    /**
+     *
+     */
+    private static int numero_groupe = 0;
 
+    /**
+     * Où commence le programme.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-
         // ' ' = vide, 'B' = blanc, 'N' = noir.
         String[][] terrain = {
             {" ", " ", " ", " ", " ", " "},
@@ -28,8 +36,10 @@ public class Main {
                 c[y][x] = new Case(terrain[y][x]);
             }
         }
+
         afficher(c, false);
         afficher(c, true);
+
         // Groupe ? (A ou B...)
         for (int y = 0; y < c.length; y++) {
             for (int x = 0; x < c[0].length; x++) {
@@ -61,6 +71,7 @@ public class Main {
                         } else {
                             c[y][x].groupe = numero;
                         }
+                        
                         System.out.println("numero de groupe : " + c[y][x].groupe);
                     }
                 }
@@ -70,13 +81,18 @@ public class Main {
         afficher(c, true);
     }
 
+    /**
+     *
+     * @param c
+     * @param a_cote
+     * @return
+     */
     private static int numeroGroupe(Case c, Case[] a_cote) {
-
-        for (int i = 0; i < a_cote.length; i++) {
-            System.out.println(a_cote[i].type + " (" + a_cote[i].groupe + ") == " + c.type);
-            if (a_cote[i].type.equals(c.type)) {
-                if (a_cote[i].groupe != 0) {
-                    return a_cote[i].groupe;
+        for (Case a_cote1 : a_cote) {
+            System.out.println(a_cote1.type + " (" + a_cote1.groupe + ") == " + c.type);
+            if (a_cote1.type.equals(c.type)) {
+                if (a_cote1.groupe != 0) {
+                    return a_cote1.groupe;
                 }
             }
         }
@@ -84,10 +100,14 @@ public class Main {
         return 0;
     }
 
+    /**
+     *
+     * @param terrain
+     * @param afficher_groupe
+     */
     private static void afficher(Case[][] terrain, boolean afficher_groupe) {
         for (int y = 0; y < terrain.length; y++) {
             for (int x = 0; x < terrain.length; x++) {
-
                 String afficher = terrain[y][x].type;
 
                 if (afficher_groupe && !terrain[y][x].type.equals(" ")) {
@@ -116,8 +136,8 @@ public class Main {
         a_cote[3] = terrain[y][x - 1];
 
         System.out.print("Contour (" + x + "," + y + ") : ");
-        for (int i = 0; i < a_cote.length; i++) {
-            System.out.print(a_cote[i].type + ", ");
+        for (Case a_cote1 : a_cote) {
+            System.out.print(a_cote1.type + ", ");
         }
         System.out.println();
 

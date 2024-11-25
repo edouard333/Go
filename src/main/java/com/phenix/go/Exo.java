@@ -8,16 +8,26 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Créé le fichier d'exo.
+ * Crée le fichier d'exo.
  *
  * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
-public class Exo {
+public final class Exo {
 
+    /**
+     *
+     * @param output
+     * @param titre
+     * @param enonce
+     * @param fichier_image
+     * @param reponse_html
+     *
+     * @throws FileNotFoundException
+     * @throws UnsupportedEncodingException
+     */
     public Exo(String output, String titre, String enonce, String fichier_image, String reponse_html) throws FileNotFoundException, UnsupportedEncodingException {
         OutputStream os2 = new FileOutputStream(output);
         PrintWriter w = new PrintWriter(new OutputStreamWriter(os2, "UTF-8"));
-
         w.println("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
         w.println("<!DOCTYPE html>");
         w.println("<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:epub=\"http://www.idpf.org/2007/ops\">");

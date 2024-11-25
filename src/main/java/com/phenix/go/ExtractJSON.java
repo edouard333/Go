@@ -11,10 +11,19 @@ import org.json.simple.parser.ParseException;
  *
  * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
-public class ExtractJSON {
+public final class ExtractJSON {
 
+    /**
+     *
+     */
     private Object json;
 
+    /**
+     *
+     * @param fichier
+     *
+     * @throws FileNotFoundException
+     */
     public ExtractJSON(File fichier) throws FileNotFoundException {
         Scanner sc = new Scanner(new FileInputStream(fichier), "UTF-8");
         String texte = "";
@@ -34,6 +43,10 @@ public class ExtractJSON {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public Object getJSON() {
         return this.json;
     }

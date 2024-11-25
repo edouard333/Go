@@ -8,11 +8,11 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Créé le fichier de réponse.
+ * Crée le fichier de réponse.
  *
  * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
-public class Reponse {
+public final class Reponse {
 
     /**
      *

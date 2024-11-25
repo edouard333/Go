@@ -8,13 +8,16 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Créé le fichier de navigation.
+ * Crée le fichier de navigation.
  *
  * @author <a href="mailto:edouard128@hotmail.com">Edouard Jeanjean</a>
  */
-public class Nav {
+public final class Nav {
 
-    private PrintWriter nav;
+    /**
+     *
+     */
+    private final PrintWriter nav;
 
     /**
      *
@@ -40,12 +43,20 @@ public class Nav {
         nav.println("    <ol>");
     }
 
+    /**
+     *
+     * @param fichier
+     * @param titre
+     */
     public void addExo(String fichier, String titre) {
         nav.println("      <li>");
         nav.println("        <a href=\"" + fichier + "\">" + titre + "</a>");
         nav.println("      </li>");
     }
 
+    /**
+     *
+     */
     public void close() {
         nav.println("    </ol>");
         nav.println("  </nav>");
